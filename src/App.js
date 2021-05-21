@@ -3,7 +3,10 @@ import './App.css';
 function App() {
   
   return (
-    <h1>Keystroke Biometrics</h1>
+    <div>
+      <h1>Keystroke Biometrics</h1>
+      <br/>
+    </div>
   );
 }
 
