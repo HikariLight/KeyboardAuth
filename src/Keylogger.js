@@ -61,9 +61,10 @@ function Keylogger() {
 
     return (
         <div id="keylogger">
-            <textarea className="textfield" rows="7" cols="60"> </textarea>
             <br />
-            <h2> KeyPressed are displayed in the console. </h2>
+            <p id="name">Enter the text above : </p>
+            <div contentEditable="true" id="textfield"></div>
+            <br />
         </div>
     );
 }
