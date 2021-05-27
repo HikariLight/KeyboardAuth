@@ -1,0 +1,20 @@
+#home {
+    position: absolute;
+    width:100%;
+    top: 30%;
+}
+
+#home button {
+    background-color: green;
+    color: white;
+    outline: none;
+    font-size: 20px;
+    border-radius: 30px;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid green;
+    width: 15%;
+    margin-top: 10px;
+    margin-left: 15px;
+}
