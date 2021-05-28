@@ -1,32 +1,8 @@
 .transition {
     opacity: 0;
-    -moz-animation: anim 3s linear;
-    -webkit-animation: anim 3s linear;
-    -o-animation: anim 3s linear;
-    -ms-animation: anim 3s linear;
     animation: anim 3s linear;
 }
 
-@-moz-keyframes anim {
-    0% {opacity:0;}
-    50% {opacity:1;}
-    100% {opacity:0;}
-}
-@-webkit-keyframes anim {
-    0%  {opacity:0;}
-    50% {opacity:1;}
-    100% {opacity:0;}
-}
-@-o-keyframes anim {
-    0%  {opacity:0;}
-    50% {opacity:1;}
-    100% {opacity:0;}
-}
-@-ms-keyframes anim {
-    0%  {opacity:0;}
-    50% {opacity:1;}
-    100% {opacity:0;}
-}
 @keyframes anim {
     0%  {opacity:0;}
     50% {opacity:1;}

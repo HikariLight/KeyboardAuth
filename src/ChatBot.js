@@ -3,9 +3,9 @@ import './ChatBot.css';
 
 class ChatBot extends React.Component {
 
-    constructor(props) {
+    /* constructor(props) {
         super(props);
-    }
+    } */
 
     render() {
         return (

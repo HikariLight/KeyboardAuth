@@ -6,19 +6,26 @@ import Pangrams from './Pangrams.js';
 import ChatBot from './ChatBot.js';
 
 class Home extends React.Component {
-  
-    constructor(props) {
-      super(props);
+
+    yesEvent = () => {
+      this.registered = true;
+      this.props.handleClick([<ChatBot />, <Keylogger />, <UserRegistration handleClick={this.props.handleClick} registered={this.registered} />]);
+    }
+
+    noEvent = () => {
+      this.registered = false;
+      this.props.handleClick([<Pangrams />, <Keylogger />, <UserRegistration handleClick={this.props.handleClick} registered={this.registered}/>]);
     }
     
     render() {
       return (
         <div id="home">
           <h1 id="title">Have we met before ? </h1>
-          <button id="yesBtn" onClick={() => this.props.handleClick([<ChatBot />, <Keylogger />])}> Yes </button>
-          <button id="noBtn" onClick={() => this.props.handleClick([<Pangrams />, <Keylogger />, <UserRegistration handleClick={this.props.handleClick}/>])}> No </button>
+          <button id="yesBtn" onClick = {this.yesEvent} > Yes </button>
+          <button id="noBtn" onClick = {this.noEvent} > No </button>
         </div>
-      )};
-  } 
+      )
+    };
+}
 
 export default Home;

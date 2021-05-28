@@ -8,4 +8,5 @@
     padding: 10px 10px;
     outline: none;
     border-radius: 10px;
+    animation: animation 1.5s linear;
 }

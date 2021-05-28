@@ -12,9 +12,6 @@ class App extends React.Component {
       content: <Hello />,
     };
     this.initialize();
-    /* this.state = {
-      content: <Home handleClick={this.handleClick} />,
-    }; */
   }
 
   initialize = async () => {
