@@ -6,11 +6,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #633d6d;
+  background-color: #7d2fa0;
   text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body div {
+  animation: animation 1s linear;
+}
+
+@keyframes animation {
+  0%  {opacity:0;}
+  100% {opacity:1;}
 }
