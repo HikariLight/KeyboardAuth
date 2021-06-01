@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './style/App.css';
 import Hello from './Hello.js';
 import Home from './Home.js';
 import About from './About.js';
