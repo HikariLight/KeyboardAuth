@@ -108,4 +108,6 @@ function isIn(dict, key) {
 //     window.localStorage.setItem(name, sample);
 // }
 
+// let loadSample = function(name){}
+
 export default Keylogger;

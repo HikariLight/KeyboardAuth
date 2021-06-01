@@ -50,7 +50,7 @@ let sort_samples = function(s1, s2){
 }
 
 
-let measure_distance = function(test_sample, training_sample){
+let measure_distance_r = function(test_sample, training_sample){
     let result = 0;
 
     for(let i = 0; i < test_sample.length; i++){
@@ -70,15 +70,31 @@ let measure_distance = function(test_sample, training_sample){
     return result;
 }
 
+let measure_distance_a = function(test_sample, training_sample){
+    let result = 0;
 
-let test_sample1 = construct_sample([[ "b", "r", 156, 102, 89 ],["r", "o", 102, 103, 127 ],["o", "w", 103, 153, 96 ],[ "w", "n", 153, 64, 120 ], ["a", "e", 103, 153, 96 ],[ "f", "u", 153, 64, 120 ]]);
+    for(let i = 0; i < test_sample.length; i++){
+        for(let j = 0; j < test_sample.length; j++){
+            if(test_sample[i][0] == training_sample[j][0]){
+                result += (test_sample / training_sample);
+            }
+        }
+    }
+
+    return result;
+}
+
+
+let test_sample1 = construct_sample([[ "b", "r", 156, 102, 159 ],["r", "o", 102, 103, 127 ],["o", "w", 103, 153, 116 ],[ "w", "n", 153, 64, 120 ], ["a", "e", 103, 153, 116 ],[ "f", "u", 153, 64, 120 ]]);
 let test_sample2 = construct_sample([[ "b", "r", 150, 110, 95 ],["r", "o", 90, 100, 110 ],["o", "w", 95, 140, 100 ],[ "w", "n", 140, 70, 110 ], ["s", "e", 103, 153, 96 ],[ "n", "a", 153, 64, 120 ]]);
 
 filter_samples(test_sample1, test_sample2);
+filter_samples(test_sample1, test_sample2);
 
-// sort_samples(test_sample1, test_sample2);
-// let distance = measure_distance(test_sample1, test_sample2);
-// console.log(distance);
 
-console.log(test_sample1);
-console.log(test_sample2);
+sort_samples(test_sample1, test_sample2);
+let distance = measure_distance(test_sample1, test_sample2);
+console.log(distance);
+
+// console.log(test_sample1);
+// console.log(test_sample2);
