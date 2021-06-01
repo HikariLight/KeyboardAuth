@@ -1,4 +1,4 @@
-import './Pangrams.css';
+import './style/Pangrams.css';
 
 function Pangrams () {
     return (

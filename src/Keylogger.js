@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './Keylogger.css';
+import './style/Keylogger.css';
 
 function Keylogger() {
     var data = []; // data sent to neuronal network
@@ -7,6 +7,7 @@ function Keylogger() {
     var flightTime = 0; // timer key down of previous letter
     var dwellTime = {}; // dict timer key down
     var threshold = 100000; // milliseconds
+    let sample = [];
 
     const listenerUp = (event) => {
 
@@ -28,10 +29,10 @@ function Keylogger() {
 
         if (data.length >= 2) {
             var x = concatenateData(data);
-            console.log(x);
+            // console.log(x);
             data.shift();
-            
-            // sent x to neuronal network
+
+            sample.push(x);
         }
     };
 
@@ -102,5 +103,9 @@ function isIn(dict, key) {
     }
     return false;
 }
+
+// let saveSample = function(name){
+//     window.localStorage.setItem(name, sample);
+// }
 
 export default Keylogger;

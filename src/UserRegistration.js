@@ -1,5 +1,5 @@
 import React from 'react';
-import './UserRegistration.css';
+import './style/UserRegistration.css';
 
 class UserRegistration extends React.Component {
 
@@ -22,13 +22,20 @@ class UserRegistration extends React.Component {
         );
     }
 
+    registerUser(){
+        console.log("It's working kinda");
+    }
+
     render () {
         if(this.props.registered === false) {
             return (
                 <div>
                     <p id="name">Enter your name : </p>
                     <div contentEditable="true" id="textfield"></div>
-                    <button id="submit" onClick={() => this.props.handleClick(this.unregisteredBtn())}> Submit </button>
+                    <button id="submit" onClick={() => {
+                        this.registerUser();
+                        this.props.handleClick(this.unregisteredBtn());
+                        }}> Submit </button>
                 </div>
             );
 

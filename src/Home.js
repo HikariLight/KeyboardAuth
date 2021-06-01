@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css';
+import './style/Home.css';
 import Keylogger from './Keylogger.js';
 import UserRegistration from './UserRegistration';
 import Pangrams from './Pangrams.js';
