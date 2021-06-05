@@ -1,10 +1,10 @@
 import React from 'react';
 import './style/UserRegistration.css';
+import { saveSample } from './Keylogger.js';
 
 class UserRegistration extends React.Component {
 
     unregisteredBtn() {
-        //get the value of textfield
         return (
             <div id="home">
                 <h1 id="title"> Alright, gotcha. </h1>
@@ -24,6 +24,15 @@ class UserRegistration extends React.Component {
 
     registerUser(){
         console.log("It's working kinda");
+        var name = document.getElementsByClassName('nameField')[0].innerText.toLowerCase();
+        if (window.localStorage.getItem(name)==null) {
+            saveSample(name);
+            return true;
+        } else {
+            alert("Name already used ! \nPlease choose an other one.");
+            return false;
+        }   
+        
     }
 
     render () {
@@ -31,10 +40,11 @@ class UserRegistration extends React.Component {
             return (
                 <div>
                     <p id="name">Enter your name : </p>
-                    <div contentEditable="true" id="textfield"></div>
+                    <div contentEditable="true" id="textfield" className="nameField"></div>
                     <button id="submit" onClick={() => {
-                        this.registerUser();
-                        this.props.handleClick(this.unregisteredBtn());
+                        if (this.registerUser()) {
+                            this.props.handleClick(this.unregisteredBtn());
+                        }
                         }}> Submit </button>
                 </div>
             );
@@ -42,7 +52,10 @@ class UserRegistration extends React.Component {
         } else if (this.props.registered === true) {
             return (
                 <div>
-                    <button id="submit" onClick={() => this.props.handleClick(this.registeredBtn())}> Submit </button>
+                    <button id="submit" onClick={() => {
+                        //this.registerUser(); // change to read data and get name
+                        this.props.handleClick(this.registeredBtn())
+                    }}> Submit </button>
                 </div>
             );
         } else {

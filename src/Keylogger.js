@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import './style/Keylogger.css';
 
+// global variable
+var sample = [];
+
 function Keylogger() {
-    var data = []; // data sent to neuronal network
+    var data = []; // data to concatenate
     var tmp = []; // tmp to link dwell time / flight time
     var flightTime = 0; // timer key down of previous letter
     var dwellTime = {}; // dict timer key down
     var threshold = 100000; // milliseconds
-    let sample = [];
-
+    
     const listenerUp = (event) => {
 
         if (isIn(dwellTime, event.key)) {
             var elapsed = new Date().getTime() - dwellTime[event.key];
-
-            // console.log("key up : " + event.key + " | dwell Time : " + elapsed);
 
             delete dwellTime[event.key];
         }
@@ -28,11 +28,8 @@ function Keylogger() {
         }
 
         if (data.length >= 2) {
-            var x = concatenateData(data);
-            // console.log(x);
+            sample.push(concatenateData(data));
             data.shift();
-
-            sample.push(x);
         }
     };
 
@@ -44,8 +41,6 @@ function Keylogger() {
             if (elapsed > threshold) {
                 elapsed = 0;
             }
-
-            // console.log("key down : " + event.key + " | flight Time : " + elapsed);
 
             dwellTime[event.key] = now; 
             tmp.push([event.key, null, elapsed]);
@@ -104,10 +99,9 @@ function isIn(dict, key) {
     return false;
 }
 
-// let saveSample = function(name){
-//     window.localStorage.setItem(name, sample);
-// }
-
-// let loadSample = function(name){}
+// exportation
+export var saveSample = function(name) {
+    window.localStorage.setItem(name, sample);
+};
 
 export default Keylogger;
