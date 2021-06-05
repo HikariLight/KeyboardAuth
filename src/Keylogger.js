@@ -2,9 +2,10 @@ import React, { useEffect } from 'react';
 import './style/Keylogger.css';
 
 // global variable
-var sample = [];
+var sample;
 
 function Keylogger() {
+    sample = [];
     var data = []; // data to concatenate
     var tmp = []; // tmp to link dwell time / flight time
     var flightTime = 0; // timer key down of previous letter
@@ -103,5 +104,9 @@ function isIn(dict, key) {
 export var saveSample = function(name) {
     window.localStorage.setItem(name, sample);
 };
+
+export var getSample = function() {
+    return sample;
+}
 
 export default Keylogger;
