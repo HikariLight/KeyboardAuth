@@ -14,12 +14,22 @@ class UserRegistration extends React.Component {
     }
 
     registeredBtn(name) {
-        return(
-            <div id="home">
-                <h1 id="title"> You're {name} </h1>
-                <h1 id="title"> Good to see you again :) </h1>
-            </div>
-        );
+        if (name !== "Nobody") {
+            return(
+                <div id="home">
+                    <h1 id="title"> You're {name} </h1>
+                    <h1 id="title"> Good to see you again :) </h1>
+                </div>
+            );
+        } else {
+            return (
+                <div id="home">
+                    <h1 id="title">I can't find you in my database ! </h1>
+                    <h1 id="title">I suggest you to register before using this feature of the application.</h1>
+                </div>
+            );
+        }
+        
     }
 
     loadingPage() {
