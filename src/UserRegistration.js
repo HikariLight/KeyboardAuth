@@ -1,6 +1,6 @@
 import React from 'react';
 import './style/UserRegistration.css';
-import { saveSample, getSample, get_identity } from './Keylogger.js';
+import { saveSample, get_identity } from './Keylogger.js';
 
 class UserRegistration extends React.Component {
 
