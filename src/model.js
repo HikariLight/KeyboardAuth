@@ -88,8 +88,8 @@ export let process_sample = function(sample){
     // Calls the previous filtering functions
 
     let result = [];
-    result = process_data(sample);
-    result = construct_sample(result);
+    // result = process_data(sample);
+    result = construct_sample(sample);
     result = dupilicates_filter(result);
 
     return result;
@@ -147,17 +147,23 @@ let measure_distance_a = function(test_sample, training_sample){
 }
 
 export let infer_identity = function(test_sample, samples){
+    // Calls the statistical model functions to guess the identity of the user
+    
+    let testing_sample = [];
     let lowest_score = 1000000;
     let scores = {};
     let result = "Nobody";
 
-    console.log(test_sample);
-    console.log(samples);
-    
+
+    testing_sample = process_sample(test_sample);
+
     for (const [name, training_sample] of Object.entries(samples)){
-        let train_sample = process_sample(training_sample);
-        filter_samples(test_sample, train_sample);
-        let score = measure_distance_r(test_sample, train_sample) + measure_distance_a(test_sample, train_sample);
+
+        let train_sample = process_data(training_sample);
+        train_sample = process_sample(train_sample);
+        filter_samples(testing_sample, train_sample);
+
+        let score = measure_distance_r(testing_sample, train_sample) + measure_distance_a(testing_sample, train_sample);
         scores[name] = score;
       }
 
@@ -168,7 +174,6 @@ export let infer_identity = function(test_sample, samples){
         }
       }
     
-    console.log(scores);
     return result;
 }
 

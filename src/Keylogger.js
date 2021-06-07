@@ -106,10 +106,6 @@ export var saveSample = function(name){
     window.localStorage.setItem(name, sample);
 };
 
-export var getSample = function() {
-    return sample;
-}
-
 export let get_identity = function(){
     return infer_identity(sample, localStorage);
 }
