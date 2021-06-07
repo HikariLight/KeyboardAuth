@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './style/Keylogger.css';
+import { infer_identity } from './model.js';
 
 // global variable
 var sample;
@@ -101,7 +102,7 @@ function isIn(dict, key) {
 }
 
 // exportation
-export var saveSample = function(name) {
+export var saveSample = function(name){
     window.localStorage.setItem(name, sample);
 };
 
