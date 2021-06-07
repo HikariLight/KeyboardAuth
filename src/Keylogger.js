@@ -110,4 +110,8 @@ export var getSample = function() {
     return sample;
 }
 
+export let get_identity = function(sample){
+    return infer_identity(sample, localStorage);
+}
+
 export default Keylogger;

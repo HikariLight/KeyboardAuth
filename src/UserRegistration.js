@@ -1,6 +1,6 @@
 import React from 'react';
 import './style/UserRegistration.css';
-import { saveSample, getSample } from './Keylogger.js';
+import { saveSample, getSample, get_identity } from './Keylogger.js';
 
 class UserRegistration extends React.Component {
 
@@ -45,9 +45,8 @@ class UserRegistration extends React.Component {
 
     identifyUser() {
         var currentUser = getSample();
-        // var id = compareSample(currentUser);
-        // return id;
-        return null;
+        let identity = get_identity(currentUser);
+        return identity;
     }
 
     render () {
@@ -68,9 +67,9 @@ class UserRegistration extends React.Component {
             return (
                 <div>
                     <button id="submit" onClick={() => {
-                        this.props.handleClick(this.loadingPage());
-                        //var id = this.identifyUser(); // compareSample and return the name
-                        //this.props.handleClick(this.registeredBtn(id));
+                        // this.props.handleClick(this.loadingPage());
+                        var id = this.identifyUser(); // compareSample and return the name
+                        this.props.handleClick(this.registeredBtn(id));
                     }}> Submit </button>
                 </div>
             );
