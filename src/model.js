@@ -146,11 +146,14 @@ let measure_distance_a = function(test_sample, training_sample){
     return result;
 }
 
-let infer_identity = function(test_sample, samples){
+export let infer_identity = function(test_sample, samples){
     let lowest_score = 1000000;
     let scores = {};
     let result = "Nobody";
 
+    console.log(test_sample);
+    console.log(samples);
+    
     for (const [name, training_sample] of Object.entries(samples)){
         let train_sample = process_sample(training_sample);
         filter_samples(test_sample, train_sample);
@@ -164,7 +167,8 @@ let infer_identity = function(test_sample, samples){
             result = name;
         }
       }
-
+    
+    console.log(scores);
     return result;
 }
 
@@ -178,4 +182,4 @@ let local_storage = {
 // Identical to the "dhia" sample in local_storage
 let data_dhia1 = process_sample("Shift,h,421,170,120,h,e,170,104,139,e, ,104,95,113, ,b,95,153,111,b,r,153,123,120,r,o,123,101,138,o,w,101,103,94,w,n,103,96,135,n, ,96,104,48, ,f,104,119,88,f,o,119,72,144,o,x,72,119,65,x, ,119,73,182, ,j,73,79,41,j,u,79,103,489,u,m,103,79,240,m,p,79,72,183,p,s,72,71,80,s, ,71,79,96, ,o,79,79,104,o,v,79,88,56,v,e,88,120,136,e,r,120,103,72,r, ,103,128,112, ,t,128,134,100,t,h,134,151,61,h,e,151,111,71,e, ,111,90,122, ,l,90,95,87,l,a,95,127,71,a,z,127,129,87,z,y,129,96,225,y, ,96,112,112, ,d,112,120,128,d,o,120,83,121,o,g,83,88,79,g,.,88,231,56,.,Shift,231,294,112");
 let identity = infer_identity(data_dhia1, local_storage);
-console.log(identity);
+// console.log(identity);
