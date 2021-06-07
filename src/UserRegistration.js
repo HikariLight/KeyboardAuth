@@ -32,21 +32,19 @@ class UserRegistration extends React.Component {
         var name = document.getElementsByClassName('nameField')[0].innerText.toLowerCase();
         name = name.replace(/\s/g, "");
         if (name === "") {
-            alert("You need to specify a name !");
+            alert("You need to enter a name!");
             return false;
         } else if (window.localStorage.getItem(name) == null) {
             saveSample(name);
             return true;
         } else {
-            alert("Name already used ! \nPlease choose an other one.");
+            alert("Name already taken!\nPlease enter a different one.");
             return false;
         }   
     }
 
     identifyUser() {
-        var currentUser = getSample();
-        let identity = get_identity(currentUser);
-        return identity;
+        return get_identity();
     }
 
     render () {
@@ -68,8 +66,8 @@ class UserRegistration extends React.Component {
                 <div>
                     <button id="submit" onClick={() => {
                         // this.props.handleClick(this.loadingPage());
-                        var id = this.identifyUser(); // compareSample and return the name
-                        this.props.handleClick(this.registeredBtn(id));
+                        var identity = this.identifyUser();
+                        this.props.handleClick(this.registeredBtn(identity));
                     }}> Submit </button>
                 </div>
             );

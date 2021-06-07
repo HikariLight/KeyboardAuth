@@ -110,7 +110,7 @@ export var getSample = function() {
     return sample;
 }
 
-export let get_identity = function(sample){
+export let get_identity = function(){
     return infer_identity(sample, localStorage);
 }
 
