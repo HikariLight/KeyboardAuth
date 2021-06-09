@@ -15,7 +15,7 @@ class About extends React.Component {
                     et l'application se bloque. <br/> L'objectif du projet est de proposer une interface web, fonctionnant sur clavier, 
                     voire tablette tactile, permettant de différencier l'utilisateur original des 
                     autres, puis éventuellement identifier un individu parmis plusieurs enregistré.</p>
-                <h2 id="title2"> Rapport : </h2>
+                <h2 id="title2"> Rapport : <a href="https://docs.google.com/document/d/1YfOJN4fa9ZYpL56Tehhg0yeyf95q81QmnyD8XLj9EIc/edit?usp=sharing">Lien</a></h2>
                 <h2 id="title2"> Diaporama : </h2>
                 <h2 id="title2"> GitHub : https://github.com/HikariLight/KeyboardAuth</h2>
             </div>
