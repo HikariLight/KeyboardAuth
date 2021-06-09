@@ -151,7 +151,6 @@ let measure_distance_a = function(test_sample, training_sample){
 export let infer_identity = function(testing_sample, saved_samples){
     // Calls the statistical model functions to guess the identity of the user
     
-    // let saved_sample = [];
     let test_sample = process_sample(testing_sample);
     let lowest_score = 1000000;
     let scores = {};
