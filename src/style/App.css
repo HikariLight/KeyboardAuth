@@ -1,5 +1,6 @@
 .App {
     font-family: Helvetica, Arial, Verdana;
+    display: flex;
 }
 
 #menu {

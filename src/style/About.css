@@ -1,11 +1,21 @@
-#title2 {
-    text-align: left;
-    margin: 40px;
+main{
     color: white;
+    /* display: flex; */
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    align-content: center;
 }
 
-#paragraph {
-    text-align: justify;
-    margin: 20px;
+ul{
+    list-style: none;
+}
+
+a{
     color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
 }

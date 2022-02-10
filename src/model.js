@@ -116,13 +116,13 @@ let measure_distance_r = function(test_sample, training_sample){
 
     for(let i = 0; i < test_sample.length; i++){
         for(let j = 0; j < test_sample.length; j++){
-            if(test_sample[i][0] == training_sample[j][0]){
+            if(test_sample[i][0] === training_sample[j][0]){
                 result += Math.abs(j - i);
             }
         }
     }
 
-    if(test_sample.length % 2 == 0){
+    if(test_sample.length % 2 === 0){
         result = result / ((test_sample.length ** 2) / 2)
     } else{
         result = result / (((test_sample.length ** 2) - 1) / 2)
@@ -140,7 +140,7 @@ let measure_distance_a = function(test_sample, training_sample){
 
     for(let i = 0; i < test_sample.length; i++){
         for(let j = 0; j < test_sample.length; j++){
-            if(test_sample[i][0] == training_sample[j][0]){
+            if(test_sample[i][0] === training_sample[j][0]){
                 let similar = Math.max(test_sample[i][1], training_sample[j][1]) / Math.min(test_sample[i][1], training_sample[j][1]);
                 if(1 < similar && similar< 1.2){
                     similar_digraphs += 1;

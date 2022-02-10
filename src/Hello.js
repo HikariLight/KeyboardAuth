@@ -5,7 +5,7 @@ class Hello extends React.Component {
     render () {
         return (
             <div id="home">
-                <h1 id="title" className="transition"> Hi ! </h1>
+                <h1 id="title" className="transition"> Hi! </h1>
             </div>
         );
     }
